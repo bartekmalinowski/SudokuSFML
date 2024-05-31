@@ -1,0 +1,112 @@
+﻿  SudokuGenerator.cpp
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(126,85): warning C4244: "argument": konwersja z "const int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(126,64): warning C4244: "argument": konwersja z "const int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(138,101): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(138,80): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(141,108): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(141,87): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(144,106): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(144,85): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(157,90): warning C4244: "argument": konwersja z "const int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(157,69): warning C4244: "argument": konwersja z "const int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(162,90): warning C4244: "argument": konwersja z "const int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(162,69): warning C4244: "argument": konwersja z "const int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(176,98): warning C4244: "argument": konwersja z "const int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(176,77): warning C4244: "argument": konwersja z "const int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(181,98): warning C4244: "argument": konwersja z "const int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(181,77): warning C4244: "argument": konwersja z "const int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(185,99): warning C4244: "argument": konwersja z "const int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(185,78): warning C4244: "argument": konwersja z "const int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(200,98): warning C4244: "argument": konwersja z "const int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(200,77): warning C4244: "argument": konwersja z "const int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(207,98): warning C4244: "argument": konwersja z "const int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\SudokuKlas\SudokuGenerator.cpp(207,77): warning C4244: "argument": konwersja z "const int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+  SudokuKlas.vcxproj -> C:\Users\malin\OneDrive\Pulpit\uczelnia\PK4\SudokuKlas\x64\Debug\SudokuKlas.exe

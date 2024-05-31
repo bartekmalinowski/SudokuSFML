@@ -1,0 +1,182 @@
+void GameManager::run() {
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                window.close();
+            }
+            else if (event.type == sf::Event::MouseButtonPressed) {
+                if (isMenuOpen) {
+                    if (playButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                        isMenuOpen = false;
+                        // Show difficulty selection menu
+                        sf::Text easyButton("Easy", font, 30);
+                        sf::Text mediumButton("Medium", font, 30);
+                        sf::Text hardButton("Hard", font, 30);
+
+                        easyButton.setPosition(290, 290);
+                        mediumButton.setPosition(290, 320);
+                        hardButton.setPosition(290, 350);
+
+                        while (true) {
+                            window.clear();
+                            window.draw(easyButton);
+                            window.draw(mediumButton);
+                            window.draw(hardButton);
+                            window.display();
+
+                            while (window.pollEvent(event)) {
+                                if (event.type == sf::Event::MouseButtonPressed) {
+                                    if (easyButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                                        difficulty = 40; // Easy difficulty
+                                        isGameRunning = true;
+                                        sudokuSolver.generateRandomNumbers(sudokuBoard, difficulty);
+                                        break;
+                                    }
+                                    else if (mediumButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                                        difficulty = 20; // Medium difficulty
+                                        isGameRunning = true;
+                                        sudokuSolver.generateRandomNumbers(sudokuBoard, difficulty);
+                                        break;
+                                    }
+                                    else if (hardButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                                        difficulty = 14; // Hard difficulty
+                                        isGameRunning = true;
+                                        sudokuSolver.generateRandomNumbers(sudokuBoard, difficulty);
+                                        break;
+                                    }
+                                }
+                            }
+                            if (isGameRunning) break;
+                        }
+                    }
+                    else if (loadButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                        isMenuOpen = false;
+                        isGameRunning = true;
+                        fileHandler.loadBoardFromFile("save.csv");
+                    }
+                    else if (exitButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                        window.close();
+                    }
+                }
+                else if (isGameRunning) {
+                    int mouseX = event.mouseButton.x;
+                    int mouseY = event.mouseButton.y;
+                    int cellX = mouseX / cellSize;
+                    int cellY = mouseY / cellSize;
+                    sudokuBoard.setSelectedCell(cellY, cellX);
+                }
+                else if (isGameOver) {
+                    if (gameOverPlayAgainButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+
+                        isGameOver = false;
+                        sudokuSolver.generateNewBoard(sudokuBoard, difficulty);
+                        isGameRunning = true;
+                    }
+                    if (returnToGameButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                        isGameOver = false;
+                        isGameRunning = true;
+                    }
+                    else if (gameOverCheckButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                        if (sudokuBoard.isBoardFilled()) {
+                            bool isSolutionCorrect = sudokuCheck.checkSolutionAsync();
+                            if (isSolutionCorrect) {
+                                sf::Text correctMessage("Congratulations! You solved the Sudoku correctly!", font, 30);
+                                correctMessage.setPosition(100, 100);
+                                correctMessage.setFillColor(sf::Color::
+                                );
+                                window.draw(correctMessage);
+                            }
+                            else {
+                                sf::Text incorrectMessage("Sorry, your solution is incorrect. Try again!", font, 30);
+                                incorrectMessage.setPosition(100, 100);
+                                incorrectMessage.setFillColor(sf::Color::Black);
+                                window.draw(incorrectMessage);
+                            }
+                        }
+                        else {
+                            sf::Text incompleteMessage("Sorry, the Sudoku is not complete. Fill in all the cells!", font, 30);
+                            incompleteMessage.setPosition(100, 100);
+                            incompleteMessage.setFillColor(sf::Color::Black);
+                            window.draw(incompleteMessage);
+                        }
+                        window.display();
+                        bool showMessage = true;
+                        while (showMessage) {
+                            while (window.pollEvent(event)) {
+                                if (event.type == sf::Event::MouseButtonPressed) {
+                                    showMessage = false;
+                                    isGameRunning = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    else if (gameOverSaveButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                        fileHandler.saveBoardToFile("save.csv");
+                        sf::Text saveMessage("Board sucessfully saved!", font, 30);
+                        saveMessage.setPosition(100, 100);
+                        saveMessage.setFillColor(sf::Color::Black);
+                        window.draw(saveMessage);
+                        window.display();
+                        bool showMessage = true;
+                        while (showMessage) {
+                            while (window.pollEvent(event)) {
+                                if (event.type == sf::Event::MouseButtonPressed) {
+                                    showMessage = false;
+                                    isGameRunning = true;
+                                    break;
+                                }
+                            }
+                        }
+
+                    }
+                    else if (gameOverExitButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                        window.close();
+                    }
+                }
+            }
+            else if (event.type == sf::Event::KeyPressed) {
+                if (event.key.code == sf::Keyboard::Escape) {
+                    bool escapePressedDuringGame = false;
+                    if (!escapePressedDuringGame) {
+                        if (isGameRunning) {
+                            isGameOver = true;
+                            isGameRunning = false;
+                            escapePressedDuringGame = true;
+                        }
+                    }
+                    else {
+                        isMenuOpen = true;
+                        isGameRunning = false;
+                    }
+                }
+                else if (event.key.code == sf::Keyboard::R) {
+                    sudokuSolver.generateNewBoard(sudokuBoard, difficulty);
+                }
+                else {
+                    inputHandler.handleKeyPress(event.key.code);
+                }
+            }
+        }
+
+        if (isMenuOpen) {
+            window.draw(playButton);
+            window.draw(loadButton);
+            window.draw(exitButton);
+        }
+        else if (isGameRunning) {
+            sudokuBoard.draw(window);
+        }
+        else if (isGameOver) {
+            window.draw(gameOverPlayAgainButton);
+            window.draw(returnToGameButton);
+            window.draw(gameOverCheckButton);
+            window.draw(gameOverSaveButton);
+            window.draw(gameOverExitButton);
+        }
+
+        window.display(); 
+    }
+}
